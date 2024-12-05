@@ -60,24 +60,17 @@ int main() {
             }
 
             case 4: {
-                if (n < 2) {
-                    printf("Mang phai co it nhat 2 phan tu.\n");
-                } else {
-                    int max = arr[0], max2 = -2147483648;
-                    for (int i = 1; i < n; i++) {
-                        if (arr[i] > max) {
-                            max2 = max;
-                            max = arr[i];
-                        } else if (arr[i] > max2 && arr[i] != max) {
-                            max2 = arr[i];
-                        }
-                    }
-                    if (max2 == -2147483648) {
-                        printf("Khong co gia tri lon thu hai.\n");
-                    } else {
-                        printf("Gia tri lon thu hai trong mang la: %d\n", max2);
-                    }
-                }
+                
+                      for(int i = 0; i < n; i++){
+					if(max == arr[i]){
+						continue;
+					}	
+					else if(max2 < arr[i]){
+						max2 = arr[i];
+					}		
+				}
+					printf("Phan tu lon thu hai cua mang la: %d",max2);
+					
                 break;
             }
 
@@ -85,11 +78,11 @@ int main() {
                 if (n >= 100) {
                     printf("Mang da day. Khong the them phan tu moi.\n");
                 } else {
-                    int newElement;
+                    int new;
                     printf("Nhap gia tri phan tu moi: ");
-                    scanf("%d", &newElement);
-                    arr[n++] = newElement;
-                    printf("Them thanh cong!\n");
+                    scanf("%d", &new);
+                    arr[n++] = new;
+                    printf("Da them ptu!\n");
                 }
                 break;
             }
